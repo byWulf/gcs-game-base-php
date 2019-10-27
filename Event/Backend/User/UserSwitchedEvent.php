@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace ByWulf\GameCentralStation\Event\Backend\User;
 
-use Bywulf\GameCentralStation\Dto\User;
+use Bywulf\GameCentralStation\Model\User;
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**

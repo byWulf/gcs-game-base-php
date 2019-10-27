@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace ByWulf\GameCentralStation\Service\Slot;
 
-use Bywulf\GameCentralStation\Dto\Slot;
-use Bywulf\GameCentralStation\Dto\User;
+use Bywulf\GameCentralStation\Model\Slot;
+use Bywulf\GameCentralStation\Model\User;
 use ReflectionClass;
 use ReflectionException;
 

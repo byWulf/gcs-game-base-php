@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Bywulf\GameCentralStation\Dto;
+namespace Bywulf\GameCentralStation\Model;
 
 /**
  * Class User

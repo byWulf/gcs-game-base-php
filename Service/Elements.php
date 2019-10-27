@@ -7,6 +7,7 @@ use ByWulf\GameCentralStation\Element\ElementInterface;
 use ByWulf\GameCentralStation\Event\Backend\Match\MatchMethodEvent;
 use ByWulf\GameCentralStation\Exception\BackendCommunicatorException;
 use ByWulf\GameCentralStation\Exception\ElementException;
+use ByWulf\GameCentralStation\GameBase;
 use ByWulf\GameCentralStation\Helper;
 use ByWulf\GameCentralStation\Internal;
 use ByWulf\GameCentralStation\Service\Element\ElementManipulator;
@@ -32,14 +33,20 @@ class Elements
      * @var ElementInterface[]
      */
     private $elements = [];
+    /**
+     * @var GameBase
+     */
+    private $gameBase;
 
     /**
+     * @param GameBase $gameBase
      * @throws BackendCommunicatorException
      */
-    public function __construct()
+    public function __construct(GameBase $gameBase)
     {
         $this->elementManipulator = new ElementManipulator();
         $this->eventCreator = new ElementEventCreator();
+        $this->gameBase = $gameBase;
 
         Internal::getBackendCommunicator()->on(MatchMethodEvent::class, function(MatchMethodEvent $event) {
             $element = $this->getElementById($event->getElementId());

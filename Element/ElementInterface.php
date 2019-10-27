@@ -10,14 +10,6 @@ namespace ByWulf\GameCentralStation\Element;
 interface ElementInterface
 {
     /**
-     * Register a callback, when a specific method was called from the frontend aka player.
-     *
-     * @param string   $method
-     * @param callable $callback
-     */
-    public function on(string $method, callable $callback): void;
-
-    /**
      * Returns the unique id of the element.
      *
      * @return string

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Bywulf\GameCentralStation\Dto;
+namespace Bywulf\GameCentralStation\Model;
 
 use ByWulf\GameCentralStation\Exception\BackendCommunicatorException;
 use ByWulf\GameCentralStation\Internal;
@@ -160,6 +160,19 @@ class Slot
             'event' => 'slot.pointsChanged',
             'slotIndex' => $this->index,
             'points' => $this->points
+        ]);
+    }
+
+    /**
+     * @param string $message
+     * @throws BackendCommunicatorException
+     */
+    public function addNotification(string $message): void
+    {
+        Internal::getBackendCommunicator()->sendCommand('event', [
+            'event' => 'notification.added',
+            'text' => $message,
+            'targetPlayers' => [$this->index]
         ]);
     }
 

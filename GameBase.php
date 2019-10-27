@@ -33,9 +33,9 @@ class GameBase
      */
     private function __construct()
     {
-        $this->game = new Game();
-        $this->players = new Players();
-        $this->elements = new Elements();
+        $this->game = new Game($this);
+        $this->players = new Players($this);
+        $this->elements = new Elements($this);
     }
 
     /**

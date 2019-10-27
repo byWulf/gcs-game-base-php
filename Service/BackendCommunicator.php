@@ -120,7 +120,7 @@ class BackendCommunicator
      * @param mixed  $data
      * @throws BackendCommunicatorException
      */
-    public function sendCommand(string $action, $data): void
+    public function sendCommand(string $action, $data = null): void
     {
         if ($this->connection === null) {
             throw new BackendCommunicatorException('You must first connect to the server before you can send commands.');

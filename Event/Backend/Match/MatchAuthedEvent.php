@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace ByWulf\GameCentralStation\Event\Backend\Match;
 
-use Bywulf\GameCentralStation\Dto\Slot;
+use Bywulf\GameCentralStation\Model\Slot;
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
